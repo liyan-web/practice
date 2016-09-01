@@ -1,0 +1,273 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	font-size: 57.5px;
+}
+body{
+	font-size: 0.2rem
+}
+img{
+	vertical-align: middle;
+	border: 0;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+ul{
+	list-style: none;
+}
+#download_app{
+	position: relative;
+}
+#download_app>a>img{
+	width: 100%;
+}
+.close{
+	width: 1rem;
+	height: 1rem;
+	line-height: 1rem;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -0.5rem;
+	text-align: center;
+}
+.close>img{
+	width: 30%;
+	vertical-align: middle;
+
+}
+header{
+	padding-bottom: 0.1rem;
+}
+header>a{
+	display: block;
+	padding: 0.2rem 0.3rem 0.12rem;
+}
+header>a>span:last-of-type{
+	font-size: 0.3rem;
+	color: #9C9C9C;
+}
+header>div{
+	height: 0.08rem;
+	margin: 0 0.2rem;
+	border: 1px solid #E3E3E3;
+	border-top: 0;
+}
+#wrap{
+	background-color: #FFF;
+	padding-bottom: 1rem;
+	overflow: hidden;
+}
+.content1{
+	height: 3.6rem;	
+	position: relative;
+	padding-bottom: 0.1rem;
+	background: #F5F5F5;
+	position: relative;
+}
+#focus_picture{
+	overflow: hidden;
+}
+.picture_box{
+	transition-timing-function: linear;
+}
+#focus_nav{
+	width: 100%;
+	position: absolute;
+	bottom: .01rem;
+	text-align: center;
+}
+#focus_nav>li{
+	width: .1rem;
+	height: .1rem;
+	margin: 0 .1rem;
+}
+.picture_box{
+	float: left;
+	position: relative;
+}
+.picture_box>a{
+	width: 100%;
+}
+.picture_box>a>img{
+	width: 100%;
+}
+.content2{
+	width: 7.2rem;
+	height: 6.24rem;
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	padding-bottom: 0.1rem;
+	background: #F5F5F5;
+}
+.cont2{
+	width: 2.32rem;
+	height: 3.06rem;
+	position: absolute;
+	background: #FFF;
+}
+.cont2>img{
+	width: 100%
+}
+.cont2_1{
+	top: 0;
+	left: 0;
+}
+.cont2_2{
+	top: 0;
+	left: 2.44rem;
+}
+.cont2_3{
+	top: 0;
+	left: 4.88rem;
+}
+.cont2_4{
+	top: 3.18rem;
+	left: 0;
+}
+.cont2_5{
+	top: 3.18rem;
+	left: 2.44rem;
+}
+.cont2_6{
+	top: 3.18rem;
+	left: 4.88rem;
+}
+.content3{
+	padding-bottom: 0.1rem;
+	background: #F5F5F5;
+}
+.cont3{
+	display: box;
+	display: -webkit-box;
+	box-align: center;
+	-webkit-box-align: center;
+	padding: 0.3rem 0;
+	border-bottom: 1px solid #F2F2F2;
+	background: #FFF;
+}
+.left{
+	width: 2.54rem;
+	height: 1.45rem;
+	position: relative;
+}
+.l_img{
+	width: 100%;
+}
+.tag{
+	width: 1.2rem;
+	height: 1.2rem;
+	position: absolute;
+	bottom: 0;
+	left: 0.1rem;
+	z-index: 10;
+	opacity: 0.9;
+}
+.right{
+	box-flex: 1;
+	-webkit-box-flex: 1;
+	width: 100%;
+	margin-right: .2rem;
+}
+.right>p:nth-child(1){
+	margin-bottom: 0.1rem;
+	font-size: 0.3rem;
+	color:#000;
+}
+.right>p:nth-child(2){
+	margin-bottom: .12rem;
+	line-height: .34rem;
+	font-size: .26rem;
+	color: #969696;
+}
+.right>p:nth-child(3){
+	font-size: .28rem;
+	color: #FE4900;
+}
+.content4{
+	height: 2rem;
+	width: 7.2rem;
+	padding-bottom: 0.1rem;
+	position: relative;
+	background: #F5F5F5;
+}
+.cont4_l{
+	width: 3.6rem;
+	height: 1rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.cont4_r{
+	width: 3.6rem;
+	height: 1rem;
+	position: absolute;
+	top: 0;
+	left: 3.6rem;
+}
+.content4>div>img{
+	width: 100%;
+}
+footer{
+	/*height: 1rem;*/
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	border-top: 1px solid #e0e0e0;
+	z-index: 100;
+	background-color: #FFF;
+}
+.footer_ul{
+	width: 100%;
+	display: box;
+	display: -webkit-box;
+	box-align: center;
+	-webkit-box-align: center;
+	box-pack: center;
+	-webkit-box-pack: center;
+}
+.footer_ul>li{
+	width: 100%;
+	box-flex: 1;
+	-webkit-box-flex: 1;
+	text-align: center;
+}
+.f_a{
+	display: block;
+	padding: .12rem 0;
+}
+.f_a>p{
+	font-size: .22rem;
+	line-height: 0.8em;
+	color: #999;
+}
+.ispr{
+	width: .4rem;
+	height: .4rem;
+	background-image: url(../imgs/spr1.png);
+	background-size: .4rem 3.2rem;
+	-webkit-background-size: .4rem 3.2rem;
+	-moz-background-size: .4rem 3.2rem;
+	-ms-background-size: .4rem 3.2rem;
+	-o-background-size: .4rem 3.2rem;
+	overflow: hidden;
+	margin: 0 auto .08rem;
+}
+#ia{
+	background-position-y: -2.4rem;
+}
+#ib{
+	background-position-y: -0.4rem;
+}
+#ic{
+	background-position-y: -1.2rem;
+}
+#id{
+	background-position-y: -2.0rem;
+}

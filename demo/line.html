@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+	<title>canvas渐变线</title>
+	<style>
+		body{
+			margin: 0;
+			overflow: hidden;
+			background-color: #000;
+			width: 100%;
+		}
+	</style>
+	<script>
+		var oldPoint=[];
+		var num=9;
+		var winW=window.innerWidth;
+		var winH=window.innerHeight;
+		window.onload=function () {
+			var canvas=document.getElementById("canvas");
+			var ct=canvas.getContext("2d");
+			canvas.width=winW;
+			canvas.height=winH;
+			var points=[];
+			for (var i = 0; i < num; i++) {
+				points[i]={
+					x:rnd(winW,0),
+					y:rnd(winH,0),
+					speedX:rnd(5,-5),
+					speedY:rnd(5,-5),
+				};
+			};
+			// setInterval(function () {
+			// 	updata(points,winW,winH);
+			// 	drawLine(ct,points,winW,winH);
+			// },1000/60);
+			drawLine();
+			function drawLine() {
+				updata(points);
+				ct.clearRect(0,0,winW,winH)
+				ct.beginPath();
+				for (var i = 0; i < points.length; i++) {
+					ct.lineTo(points[i].x,points[i].y);
+				}
+				ct.strokeStyle="rgba(255,0,144,1)";
+				ct.closePath();
+				ct.stroke();
+				for (var i = 0; i < oldPoint.length; i++) {
+					ct.beginPath();
+					for (var j = 0; j < num; j++) {
+						ct.lineTo(oldPoint[i][j].x,oldPoint[i][j].y)
+					}
+					ct.closePath();
+					var opacity=i/oldPoint.length;
+					ct.strokeStyle="rgba(255,0,144,"+opacity+")";		
+					ct.stroke();
+				}
+				window.requestAnimFrame(drawLine);
+			}
+
+		}
+		window.onresize=function () {
+			winW=window.innerWidth;
+			winH=window.innerHeight;
+			// var canvas=document.getElementById("canvas");
+			canvas.width=winW;
+			canvas.height=winH;
+			console.log(canvas.height);
+		};	
+		window.requestAnimFrame=(function () {
+			return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
+				window.setTimeout(callback,1000/60);
+			};
+		})();
+		
+		function updata(points) {
+			var arr=[];
+			for (var i = 0; i <num; i++) {
+				arr.push({x:points[i].x,y:points[i].y})
+			}
+			oldPoint.push(arr);
+			while(oldPoint.length>12){
+				oldPoint.shift();
+				// console.log(oldPoint.length);
+			};
+			for (var i = 0; i < points.length; i++) {
+				points[i].x+=points[i].speedX;
+				points[i].y+=points[i].speedY;
+				if (points[i].x>=winW) {
+					points[i].x=winW;
+					points[i].speedX*=-1;
+				}
+				if (points[i].x<=0) {
+					points[i].x=0;
+					points[i].speedX*=-1;
+				}
+				if (points[i].y>=winH) {
+					points[i].y=winH;
+					points[i].speedY*=-1;
+				}
+				if (points[i].y<=0) {
+					points[i].y=0;
+					points[i].speedY*=-1;
+				}
+
+			}
+		}
+		function rnd(n,m) {
+			return Math.floor(Math.random()*(n-m)+m);
+		}
+	</script>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+</body>
+</html>
